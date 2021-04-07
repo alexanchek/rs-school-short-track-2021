@@ -23,7 +23,6 @@ function encodeLine(str) {
         letters[i].push(count);
       }
       letters[i].push(str[i]);
-
       count = 1;
     }
   }
