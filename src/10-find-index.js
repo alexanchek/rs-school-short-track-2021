@@ -11,8 +11,18 @@
  * For ([1, 2, 3], 2) should return 1
  *
  */
-function findIndex(/* array, value */) {
-  throw new Error('Not implemented');
+
+function findIndex(array, value) {
+  // clone this because of a restriction to reassign the array
+  const newArray = array;
+  const n = array.length;
+  let i = 0;
+  newArray[n] = value;
+
+  while (newArray[i] !== value) i++;
+
+  if (i < n) return i;
+  return -1;
 }
 
 module.exports = findIndex;
