@@ -13,13 +13,13 @@
  */
 
 function findIndex(array, value) {
-  // clone this because of a restriction to reassign the array
   const newArray = array;
   const n = array.length;
   let i = 0;
-  newArray[n] = value;
-
-  while (newArray[i] !== value) i++;
+  newArray.push(value);
+  while (newArray[i] !== value) {
+    i++;
+  }
 
   if (i < n) return i;
   return -1;
